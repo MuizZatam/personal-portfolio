@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
@@ -38,8 +38,38 @@
                 <li><a href="mailto:muizzatam110@gmail.com" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZGYyZjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYWlsIj48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHg9IjIiIHk9IjQiIHJ4PSIyIi8+PHBhdGggZD0ibTIyIDctOC45NyA1LjdhMS45NCAxLjk0IDAgMCAxLTIuMDYgMEwyIDciLz48L3N2Zz4=" alt="Mail"></a></li>
             </ul>
            
+            <div class="dropup">
+                <a class="drop-btn">More :)</a>
+                <div class="drop-content">
+                    <a href="./coming-soon.html"># Nous Café</a>
+                    <a href="./coming-soon.html"># Projects</a>
+                    <a href="./coming-soon.html"># Experiences</a>
+                </div>
+            </div>
+            
         </nav>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.drop-btn');
+            const dropup = document.querySelector('.dropup');
+    
+            dropBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent click from bubbling up
+                dropup.classList.toggle('active');
+            });
+    
+            document.addEventListener('click', function() {
+                dropup.classList.remove('active');
+            });
+    
+            dropup.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent closing when clicking inside the dropup
+            });
+        });
+    </script>
+    
 
 </body>
 </html>
