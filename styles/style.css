@@ -15,7 +15,14 @@ header h1 {
     font-style: italic;
 }
 
-header span {
+header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header div {
 
     font-size: 18px;
     font-weight: 200;
