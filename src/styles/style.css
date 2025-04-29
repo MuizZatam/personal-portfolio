@@ -106,9 +106,7 @@ h3 {
 
 .project-head {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     margin: 0;
 }
 
@@ -139,4 +137,10 @@ hr {
 
     margin-top: 5px;
     font-size: 14px;
+}
+
+.stack {
+
+    margin: 0;
+    margin: 5px 0;
 }
