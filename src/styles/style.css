@@ -1,0 +1,142 @@
+html body {
+
+    background-image: url(../Assets/bg.png);
+    font-family: "Source Serif 4", serif;
+    color: #edf2f4;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+header h1 {
+
+    font-size: 48px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+header span {
+
+    font-size: 18px;
+    font-weight: 200;
+    font-style: oblique;
+    color: #edf2f4cf;
+}
+
+p {
+
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 500px;
+    text-align: justify;
+}
+
+ul {
+
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    margin-right: 20px;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+li a img {
+
+    width: 26px;
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+
+    color: #edf2f4;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: all 0.35s;
+}
+
+a:hover {
+
+    opacity: 0.6;
+}
+
+h2 {
+
+    margin: 0;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.project-item {
+
+    margin: 0;
+    max-width: 500px;
+    margin-bottom: 15px;
+}
+
+.project-item .stack {
+
+    opacity: 0.7;
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+h3 {
+
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
+}
+
+
+.project-head {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+hr {
+
+    opacity: 0.4;
+}
+
+.project-content {
+
+    font-weight: 300;
+    opacity: 1;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.segment {
+
+    margin-bottom: 20px;
+}
+
+.segment h3, .segment p {
+
+    margin: 0;
+}
+
+.segment p {
+
+    margin-top: 5px;
+    font-size: 14px;
+}
