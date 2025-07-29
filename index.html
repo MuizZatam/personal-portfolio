@@ -1,39 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Muiz Zatam</title>
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
       <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-      <link rel='stylesheet' href='./styles.css' >
-      <title>muizzz</title>
-      <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1mYW4iPjxwYXRoIGQ9Ik0xMC44MjcgMTYuMzc5YTYuMDgyIDYuMDgyIDAgMCAxLTguNjE4LTcuMDAybDUuNDEyIDEuNDVhNi4wODIgNi4wODIgMCAwIDEgNy4wMDItOC42MThsLTEuNDUgNS40MTJhNi4wODIgNi4wODIgMCAwIDEgOC42MTggNy4wMDJsLTUuNDEyLTEuNDVhNi4wODIgNi4wODIgMCAwIDEtNy4wMDIgOC42MThsMS40NS01LjQxMloiLz48cGF0aCBkPSJNMTIgMTJ2LjAxIi8+PC9zdmc+" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: 'Cardo', serif;
+         background: #fafafa;
+         background-image:
+         radial-gradient(circle at 1px 1px, rgba(0,0,0,.15) 1px, transparent 0);
+         background-size: 20px 20px;
+         color: #2c2c2c;
+         line-height: 1.6;
+         min-height: 100vh;
+         }
+         .container {
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 60px 40px;
+         }
+         .header {
+         text-align: center;
+         margin-bottom: 60px;
+         border-bottom: 1px solid #e0e0e0;
+         padding-bottom: 40px;
+         }
+         .name {
+         font-size: clamp(1.8rem, 5vw, 2.5rem);
+         font-weight: 700;
+         color: #1a1a1a;
+         margin-bottom: 8px;
+         letter-spacing: -0.02em;
+         word-break: break-word;
+         }
+         .pronunciation {
+         font-size: clamp(0.9rem, 3vw, 1rem);
+         color: #666;
+         font-style: italic;
+         font-weight: 400;
+         }
+         .section {
+         margin-bottom: 50px;
+         }
+         .section-title {
+         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+         font-weight: 700;
+         color: #1a1a1a;
+         margin-bottom: 20px;
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+         }
+         .about-text {
+         font-size: clamp(1rem, 2.5vw, 1.1rem);
+         line-height: 1.7;
+         color: #333;
+         }
+         .about-text a {
+         color: #2c2c2c;
+         text-decoration: underline;
+         text-decoration-thickness: 1px;
+         text-underline-offset: 2px;
+         }
+         .about-text a:hover {
+         color: #000;
+         }
+         .tech-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+         gap: 15px;
+         align-items: center;
+         }
+         .tech-item {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 8px;
+         padding: 12px 16px;
+         background: rgba(255,255,255,0.8);
+         border: 1px solid #e0e0e0;
+         border-radius: 20px;
+         font-size: clamp(0.85rem, 2vw, 0.95rem);
+         color: #444;
+         transition: all 0.2s ease;
+         text-align: center;
+         min-height: 44px;
+         }
+         .tech-item:hover {
+         background: rgba(255,255,255,1);
+         border-color: #ccc;
+         transform: translateY(-1px);
+         }
+         .tech-icon {
+         width: 20px;
+         height: 20px;
+         font-size: 18px;
+         flex-shrink: 0;
+         }
+         .socials {
+         display: flex;
+         flex-direction: column;
+         gap: 15px;
+         }
+         .social-link {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         color: #2c2c2c;
+         text-decoration: none;
+         font-size: clamp(0.85rem, 2vw, 0.95rem);
+         transition: all 0.2s ease;
+         padding: 12px 16px;
+         border-radius: 8px;
+         background: rgba(255,255,255,0.6);
+         border: 1px solid #e0e0e0;
+         word-break: break-all;
+         }
+         .social-link:hover {
+         color: #000;
+         background: rgba(255,255,255,0.9);
+         transform: translateY(-1px);
+         }
+         .social-icon {
+         width: 20px;
+         height: 20px;
+         font-size: 18px;
+         flex-shrink: 0;
+         }
+         /* Tablet styles */
+         @media (min-width: 768px) {
+         .container {
+         padding: 60px 50px;
+         }
+         .tech-grid {
+         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+         gap: 20px;
+         }
+         .socials {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: 20px;
+         }
+         }
+         /* Desktop styles */
+         @media (min-width: 1024px) {
+         .socials {
+         grid-template-columns: repeat(2, 1fr);
+         }
+         }
+         /* Mobile styles */
+         @media (max-width: 480px) {
+         .container {
+         padding: 30px 20px;
+         }
+         .header {
+         margin-bottom: 40px;
+         padding-bottom: 30px;
+         }
+         .section {
+         margin-bottom: 35px;
+         }
+         .tech-grid {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 10px;
+         }
+         .tech-item {
+         padding: 10px 12px;
+         gap: 6px;
+         min-height: 40px;
+         }
+         .tech-item span {
+         font-size: 0.8rem;
+         }
+         .tech-icon {
+         width: 16px;
+         height: 16px;
+         font-size: 14px;
+         }
+         .social-link {
+         padding: 10px 12px;
+         gap: 10px;
+         }
+         .social-icon {
+         width: 18px;
+         height: 18px;
+         font-size: 16px;
+         }
+         }
+         /* Very small mobile styles */
+         @media (max-width: 320px) {
+         .container {
+         padding: 20px 15px;
+         }
+         .tech-grid {
+         grid-template-columns: 1fr;
+         }
+         .name {
+         font-size: 1.5rem;
+         }
+         }
+      </style>
    </head>
    <body>
-      <div class="inner">
-         <h1>
-            <span>Muiz Zatam</span> <span class="ahead-text">&lt;&sol;mjʊˈiz&gt;</span>
-         </h1>
-         <p>
-            I am <strong>Muiz</strong> - a Computer Engineer in my Final Year. I love Low Level Programming, Computer Graphics, Database Design/Engineering, Operating Systems, and Backend/Serverside Development.
-         </p>
-         <p>
-            As of now, I am learning Elixir and Phoenix ecosystem, building a CHIP8 Emulator in C (Later attempting to craft a Game Boy Emulator as well) and researching upon Artificial Life (ALife) - I will also be working to publish contributions and research upon the same. You can find more about these topics and my other thoughts on <a href='https://nous-cafe.vercel.app' target='_blank'>nous-cafe</a>!
-         </p>
-         <hr>
-         <h2>
-            &lt;&sol;What I Build With&gt;
-         </h2>
-         <p>
-            <em>C | Python | Elixir | BASH | Lua | PostgreSQL | MongoDB | Flask | Phoenix | Docker | ...</em> 
-         </p>
-         <hr>
-         <nav>
-            <ul>
-               <li><a href="https://www.github.com/MuizZatam" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZGYyZjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1naXRodWIiPjxwYXRoIGQ9Ik0xNSAyMnYtNGE0LjggNC44IDAgMCAwLTEtMy41YzMgMCA2LTIgNi01LjUuMDgtMS4yNS0uMjctMi40OC0xLTMuNS4yOC0xLjE1LjI4LTIuMzUgMC0zLjUgMCAwLTEgMC0zIDEuNS0yLjY0LS41LTUuMzYtLjUtOCAwQzYgMiA1IDIgNSAyYy0uMyAxLjE1LS4zIDIuMzUgMCAzLjVBNS40MDMgNS40MDMgMCAwIDAgNCA5YzAgMy41IDMgNS41IDYgNS41LS4zOS40OS0uNjggMS4wNS0uODUgMS42NS0uMTcuNi0uMjIgMS4yMy0uMTUgMS44NXY0Ii8+PHBhdGggZD0iTTkgMThjLTQuNTEgMi01LTItNy0yIi8+PC9zdmc+" alt="GitHub"></a></li>
-               <li><a href="https://www.x.com/MuizZatam" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/X_logo_2023_%28white%29.png/800px-X_logo_2023_%28white%29.png" alt="X.com"></a></li>
-               <li><a href="https://www.linkedin.com/in/muizzatam" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZGYyZjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1saW5rZWRpbiI+PHBhdGggZD0iTTE2IDhhNiA2IDAgMCAxIDYgNnY3aC00di03YTIgMiAwIDAgMC0yLTIgMiAyIDAgMCAwLTIgMnY3aC00di03YTYgNiAwIDAgMSA2LTZ6Ii8+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iMTIiIHg9IjIiIHk9IjkiLz48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iMiIvPjwvc3ZnPg==" alt="LinkedIn"></a></li>
-               <li><a href="mailto:muizzatam110@gmail.com" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZGYyZjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYWlsIj48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHg9IjIiIHk9IjQiIHJ4PSIyIi8+PHBhdGggZD0ibTIyIDctOC45NyA1LjdhMS45NCAxLjk0IDAgMCAxLTIuMDYgMEwyIDciLz48L3N2Zz4=" alt="Mail"></a></li>
-            </ul>
-         </nav>
+      <div class="container">
+         <header class="header">
+            <h1 class="name">&lt;&sol;Muiz Zatam&gt;</h1>
+            <div class="pronunciation">/mjʊˈiz/</div>
+         </header>
+         <section class="section">
+            <h2 class="section-title">&lt;&sol;About&gt;</h2>
+            <p class="about-text">
+               I am Muiz - a Computer Engineer in my Final Year. I love Low Level Programming, Computer Graphics, Database Design/Engineering, Operating Systems, and Backend/Serverside Development.
+               <br><br>
+               As of now, I am learning Elixir and Phoenix ecosystem, building a CHIP8 Emulator in C (Later attempting to craft a Game Boy Emulator as well) and researching upon Artificial Life (ALife) - I will also be working to publish contributions and research upon the same. You can find more about these topics and my other thoughts on <a href="https://nous-cafe.vercel.app" target="_blank">nous-cafe</a>!
+            </p>
+         </section>
+         <section class="section">
+            <h2 class="section-title">&lt;&sol;My Tech Stack&gt;</h2>
+            <div class="tech-grid">
+               <div class="tech-item">
+                  <i class="devicon-c-plain tech-icon"></i>
+                  <span>C</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-python-plain tech-icon"></i>
+                  <span>Python</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-elixir-plain tech-icon"></i>
+                  <span>Elixir</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-bash-plain tech-icon"></i>
+                  <span>BASH</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-lua-plain tech-icon"></i>
+                  <span>Lua</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-postgresql-plain tech-icon"></i>
+                  <span>PostgreSQL</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-mongodb-plain tech-icon"></i>
+                  <span>MongoDB</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-flask-original tech-icon"></i>
+                  <span>Flask</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-phoenix-plain tech-icon"></i>
+                  <span>Phoenix</span>
+               </div>
+               <div class="tech-item">
+                  <i class="devicon-docker-plain tech-icon"></i>
+                  <span>Docker</span>
+               </div>
+            </div>
+         </section>
+         <section class="section">
+            <h2 class="section-title">&lt;&sol;Connect&gt;</h2>
+            <div class="socials">
+               <a href="mailto:muizzatam110@gmail.com" class="social-link">
+               <i class="fas fa-envelope social-icon"></i>
+               <span>muizzatam110@gmail.com</span>
+               </a>
+               <a href="https://github.com/MuizZatam" target="_blank" class="social-link">
+               <i class="fab fa-github social-icon"></i>
+               <span>github.com/MuizZatam</span>
+               </a>
+               <a href="https://x.com/muizzatam" target="_blank" class="social-link">
+               <i class="fab fa-twitter social-icon"></i>
+               <span>x.com/muizzatam</span>
+               </a>
+               <a href="https://linkedin.com/in/MuizZatam" target="_blank" class="social-link">
+               <i class="fab fa-linkedin social-icon"></i>
+               <span>linkedin.com/in/MuizZatam</span>
+               </a>
+            </div>
+         </section>
       </div>
    </body>
+</html>
